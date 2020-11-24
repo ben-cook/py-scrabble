@@ -17,7 +17,7 @@ python scrabble/main.py
 ```
 
 ## Tests
-This project features pytests as part of it's test driven development. The recommended way to run all the tests is to `cd` into the project's root directory and run the tests with
+This project features pytests as part of its test driven development. The recommended way to run all the tests is to `cd` into the project's root directory and run the tests with
 ```
 pytest --verbose --capture=no
 ```
