@@ -77,7 +77,7 @@ class Board():
                     newBoardState[j][i] = self.board[j][i]
                 if self.temp_board[j][i] != '_':
                     if self.board[j][i] != '_':
-                        print("Board and Temp Board overlap! This shouldn't happen.")
+                        # print("Board and Temp Board overlap! This shouldn't happen.")
                     newBoardState[j][i] = self.temp_board[j][i]
 
         self.resetTempBoard()
@@ -86,36 +86,38 @@ class Board():
         v_words = list(filter(lambda word: len(word) > 1, self.findVerticalWords(newBoardState)))
 
         valid_words = list(filter(lambda word: self.validWord(word), h_words + v_words))
-        print('\n----')
-        print("current words: " + str(self.current_words_on_board))
-        print("valid words: " + str(valid_words))
+        # print('\n----')
+        # print("current words: " + str(self.current_words_on_board))
+        # print("valid words: " + str(valid_words))
 
         new_score = sum(map(lambda x: len(x), list_difference(valid_words, self.current_words_on_board)))
 
         self.current_words_on_board = valid_words
-        print('hwords:' + str(h_words))
+
+        # print('hwords:' + str(h_words))
         for word in h_words:
             if self.validWord(word):
-                # print("Found a valid word {}".format(word))
+                # # print("Found a valid word {}".format(word))
                 pass
             else:
-                # print("Found a invalid word {}".format(word))
+                # # print("Found a invalid word {}".format(word))
                 validBoardState = False
 
         for word in v_words:
             if self.validWord(word):
-                # print("Found a valid word {}".format(word))
+                # # print("Found a valid word {}".format(word))
                 pass
 
         self.win.addstr(30, 5, "{}".format("Valid Move" if validBoardState else "Invalid"), curses.A_BOLD)
         # self.win.addstr(50, 5, "hi")
-        print("board is valid: " + str(validBoardState))
+        # print("board is valid: " + str(validBoardState))
 
         if validBoardState:
             # Go to the next player's turn
             new_board_score = sum(map(lambda word: len(word), h_words + v_words))
             delta_score = new_board_score - self.current_board_score
             self.current_board_score = new_board_score
+            self.board = newBoardState
             return True, new_score
         else:
             # Clear the placed tiles and have the player try again
@@ -126,7 +128,7 @@ class Board():
 
     def getHorizontalWord(self, x, y, board):
         if board[y][x] == '_':
-            print("Something went wrong.")
+            # print("Something went wrong.")
 
         letters = []
         while board[y][x] != '_':
@@ -136,7 +138,7 @@ class Board():
 
     def getVerticalWord(self, x, y, board):
         if board[y][x] == '_':
-            print("Something went wrong.")
+            # print("Something went wrong.")
 
         letters = []
         while board[y][x] != '_':
