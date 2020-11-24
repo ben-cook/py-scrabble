@@ -21,4 +21,4 @@ This project features pytests as part of its test driven development. The recomm
 ```
 pytest --verbose --capture=no
 ```
-The tests should all pass, like ![this](https://i.imgur.com/YWII6Kd.png)
+The tests should all pass, like ![this](https://i.imgur.com/8DPzLcd.png)
