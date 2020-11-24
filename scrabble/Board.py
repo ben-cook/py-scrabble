@@ -77,7 +77,8 @@ class Board():
                     newBoardState[j][i] = self.board[j][i]
                 if self.temp_board[j][i] != '_':
                     if self.board[j][i] != '_':
-                        # print("Board and Temp Board overlap! This shouldn't happen.")
+
+                        print("Board and Temp Board overlap! This shouldn't happen.")
                     newBoardState[j][i] = self.temp_board[j][i]
 
         self.resetTempBoard()
@@ -128,7 +129,7 @@ class Board():
 
     def getHorizontalWord(self, x, y, board):
         if board[y][x] == '_':
-            # print("Something went wrong.")
+            print("Something went wrong.")
 
         letters = []
         while board[y][x] != '_':
@@ -138,7 +139,7 @@ class Board():
 
     def getVerticalWord(self, x, y, board):
         if board[y][x] == '_':
-            # print("Something went wrong.")
+            print("Something went wrong.")
 
         letters = []
         while board[y][x] != '_':
