@@ -1,0 +1,5 @@
+/.pytest_cache
+/env
+/py_scrabble.egg-info
+/sl.yml
+/terminalizer
